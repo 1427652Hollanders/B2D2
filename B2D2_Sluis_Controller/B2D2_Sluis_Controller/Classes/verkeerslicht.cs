@@ -23,7 +23,7 @@ namespace B2D2_Sluis_Controller.Classes
         private bool IsVerkeerslichtGroen = true;
         private bool IsVerkeerslichtRood = false;
     }
-    // private void WachtEenVaartuig
+    // private void WachtEenVaartuig 
     // {
     //     if (IsVerkeerslichtGroen) 
 }
