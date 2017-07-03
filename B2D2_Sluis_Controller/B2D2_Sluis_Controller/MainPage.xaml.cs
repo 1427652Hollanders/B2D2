@@ -1,17 +1,19 @@
-﻿using Windows.UI.Xaml.Controls;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+﻿
+using System.Collections.Generic;
+using Windows.Devices.Gpio;
 
 namespace B2D2_Sluis_Controller
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage
     {
+        private SocketServer server;
+        private GpioController _gpio;
+
         public MainPage()
         {
             InitializeComponent();
+            server = new SocketServer(9000);
+            server.OnDataOntvangen += server.Server_OnDataOntvangen;
         }
     }
 }
