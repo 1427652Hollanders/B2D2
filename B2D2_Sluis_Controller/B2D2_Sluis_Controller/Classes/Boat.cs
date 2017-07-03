@@ -30,14 +30,13 @@ namespace B2D2_Sluis_Controller.Classes
         }
         public void AddBoat(int sluiceid)
         {
-            rnd.Next(0, 3);
             var name = "Boot1";
             var frame = (Frame)Window.Current.Content;
             var page = (MainPage)frame.Content;
 
             if (sluiceid == 1)
             {
-                page.QueSluice1.Add(new Boat {Name = "Boot1", Weight = rnd.Next(0,200000)});
+                page?.QueSluice1.Add(new Boat {Name = name, Sluice = sluiceid, Weight = rnd.Next(0,200000)});
             }  
              
         }
