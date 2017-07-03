@@ -10,9 +10,10 @@ namespace B2D2_Sluis_Controller
         private bool IsSluice2Open { get; set; }
         private int Waterlevel { get; set; }
         private Timer myTimer { get; set; }
+        private Boat _boat = new Boat();
 
-    private List<Boat> QueSluice1 { get; set; }
-        private List<Boat> QueSluice2 { get; set; }
+        public List<Boat> QueSluice1 { get; set; }
+        public List<Boat> QueSluice2 { get; set; }
 
         public MainPage()
         {
