@@ -16,6 +16,8 @@ using System.Threading.Tasks;
 using Windows.Networking.Sockets;
 using Windows.Storage.Streams;
 using Windows.UI.Core;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 namespace B2D2_Sluis_Controller
 {
@@ -97,8 +99,11 @@ namespace B2D2_Sluis_Controller
                 CoreDispatcherPriority.Normal,
                 () =>
                 {
-                    //code voor bericht ontvangen
+                    var frame = (Frame)Window.Current.Content;
+                    var page = (MainPage)frame.Content;
+                    page?.OntvangCode(bericht);
                 }
+
             );
         }
 
