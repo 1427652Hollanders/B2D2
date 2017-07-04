@@ -101,7 +101,7 @@ namespace B2D2_Sluis_Controller
                 {
                     var frame = (Frame)Window.Current.Content;
                     var page = (MainPage)frame.Content;
-                    page?.OntvangCode(bericht);
+                    page?.RecieveCode(bericht);
                 }
 
             );
@@ -149,7 +149,7 @@ namespace B2D2_Sluis_Controller
         {
             foreach (SocketClient sc in teams)
             {
-                if (sc != null) sc.Verstuur(bericht);
+                sc?.Verstuur(bericht);
             }
         }
     }
