@@ -1,4 +1,5 @@
 ﻿using B2D2_Sluis_Controller.Classes;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using Windows.UI.Xaml;
@@ -15,6 +16,9 @@ namespace B2D2_Sluis_Controller
 
         public List<Boat> QueSluice1 { get; set; }
         public List<Boat> QueSluice2 { get; set; }
+        private Random rnd = new Random();
+
+        
 
         public MainPage()
         {
@@ -41,6 +45,7 @@ namespace B2D2_Sluis_Controller
             if (code == "S1NB")
             {
                 _boat.AddBoat(1);
+
             }
             if (code == "S2NB")
             {
@@ -52,6 +57,6 @@ namespace B2D2_Sluis_Controller
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
             RecieveCode("S1NB");
-        }
+        }   
     }
 }

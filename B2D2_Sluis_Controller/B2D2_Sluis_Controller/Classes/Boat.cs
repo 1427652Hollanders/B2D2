@@ -11,22 +11,27 @@ namespace B2D2_Sluis_Controller.Classes
 {
     public class Boat
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public int Weight { get; set; }
         public int Sluice { get; set; }
+        public int Condition { get; set; }
         private Random rnd = new Random();
 
-       
+        string[,] Boats = { { "Zephyr", "2.0 ton", "1" }, { "Jolly Roger", "2.1 ton", "1" }, { "Black Pearl", "1.8 ton", "1" }, { "Reel Time", "2.5 ton", "1" }, { "Dragonfly", "1.4 ton", "1" }, { "Fish Tales", "2.2 ton", "1" }, { "Sea Biscuit", "2.1 ton", "1" }, { "Fantasea", "2.6 ton", "1" }, { "Odyssey", "1.8 ton", "1" }, { "Solitude", "4.0 ton", "1" } };
 
         public Boat()
         {
 
         }
-        public Boat(string name, int weight, int sluice)
+        public Boat(int id, string name, int weight, int sluice, int condition)
         {
+            ID = id;
             Name = name;
             Weight = weight;
             Sluice = sluice;
+            Condition = condition;
+
         }
         public void AddBoat(int sluiceid)
         {
@@ -40,6 +45,8 @@ namespace B2D2_Sluis_Controller.Classes
             }  
              
         }
+
+    
     }
   
 }
