@@ -44,7 +44,7 @@ namespace B2D2_Sluis_Controller
             }
             if (code == "S2NB")
             {
-                //Nieuwe boot voor QueSluice2
+                _boat.AddBoat(2);
             }
 
         }
