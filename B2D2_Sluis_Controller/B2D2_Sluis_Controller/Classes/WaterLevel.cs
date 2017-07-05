@@ -23,7 +23,7 @@ namespace B2D2_Sluis_Controller.Classes
             }
             var frame = (Frame) Window.Current.Content;
             var page = (MainPage) frame.Content;
-            page?.OpenSluiceGates(1);
+            page?.OpenSluiceGates(2);
         }
 
         public void Waterlevelfalling()
@@ -37,7 +37,7 @@ namespace B2D2_Sluis_Controller.Classes
 
             var frame = (Frame) Window.Current.Content;
             var page = (MainPage) frame.Content;
-            page?.OpenSluiceGates(2);
+            page?.OpenSluiceGates(1);
         }
     }
 }

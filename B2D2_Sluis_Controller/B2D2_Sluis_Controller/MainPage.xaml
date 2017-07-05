@@ -8,6 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Click="ButtonBase_OnClick"></Button>
+        <Button Click="ButtonBase_OnClick" Margin="135,265,0,343">Addboats</Button>
+        <Button x:Name="Btn_control" Click="Btn_control_OnClick">Controllerboat</Button>
     </Grid>
 </Page>
