@@ -51,8 +51,8 @@ namespace B2D2_Sluis_Controller
                 var hostName = new HostName(Ip);
                 _socket = new StreamSocket();
                 await _socket.ConnectAsync(hostName, Port.ToString());
-                
                 _writer = new DataWriter(_socket.OutputStream);
+                Task.Delay(1000).Wait();
             }
             catch (Exception ex)
             {

@@ -75,6 +75,7 @@ namespace B2D2_Sluis_Controller
                     teamIP.Add(bericht);
                     SocketClient tmp = new SocketClient(bericht, 9000);
                     teams.Add(tmp);
+                    Task.Delay(1000).Wait();
                     VerstuurBerichtIedereen("Team " + teams.Count.ToString() + " doet mee!");
 
                     Debug.WriteLine("Team " + teams.Count.ToString() + " doet mee!");
@@ -128,11 +129,8 @@ namespace B2D2_Sluis_Controller
                     if (stringLength != actualStringLength) return; //Disconnect
 
                     //Zodra data binnen is en er is een functie gekoppeld aan het event:                    
-                    if (OnDataOntvangen != null)
-                    {
-                        //Trigger het event, zodat er iets gedaan wordt met de ontvangen data
-                        OnDataOntvangen(reader.ReadString(actualStringLength));
-                    }
+                    //Trigger het event, zodat er iets gedaan wordt met de ontvangen data
+                    OnDataOntvangen?.Invoke(reader.ReadString(actualStringLength));
                 }
             }
             catch (Exception ex)
