@@ -97,6 +97,8 @@
     </Compile>
     <Compile Include="Classes\Verkeerslicht.cs" />
     <Compile Include="Classes\Boat.cs" />
+    <Compile Include="InstructionDefinitions.cs" />
+    <Compile Include="LCDLibrary.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

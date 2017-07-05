@@ -20,6 +20,7 @@ namespace B2D2_Sluis_Controller.Classes
 
         string[,] Boats = { { "Zephyr", "2.0 ton", "1" }, { "Jolly Roger", "2.1 ton", "1" }, { "Black Pearl", "1.8 ton", "1" }, { "Reel Time", "2.5 ton", "1" }, { "Dragonfly", "1.4 ton", "1" }, { "Fish Tales", "2.2 ton", "1" }, { "Sea Biscuit", "2.1 ton", "1" }, { "Fantasea", "2.6 ton", "1" }, { "Odyssey", "1.8 ton", "1" }, { "Solitude", "4.0 ton", "1" } };
 
+
         public Boat()
         {
 
