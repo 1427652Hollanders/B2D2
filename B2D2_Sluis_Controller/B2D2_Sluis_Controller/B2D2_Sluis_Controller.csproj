@@ -95,7 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Verkeerslicht.cs" />
+    <Compile Include="Classes\Trafficlight.cs" />
     <Compile Include="Classes\Boat.cs" />
     <Compile Include="Classes\WaterLevel.cs" />
     <Compile Include="MainPage.xaml.cs">
