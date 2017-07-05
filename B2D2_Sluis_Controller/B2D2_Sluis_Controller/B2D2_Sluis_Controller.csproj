@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Classes\Trafficlight.cs" />
     <Compile Include="Classes\Boat.cs" />
+    <Compile Include="Classes\WaterLevel.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

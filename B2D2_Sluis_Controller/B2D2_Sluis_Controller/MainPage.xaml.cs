@@ -9,14 +9,17 @@ namespace B2D2_Sluis_Controller
         private bool IsSluice1Open { get; set; }
         private bool IsSluice2Open { get; set; }
         private bool IsSluiceRunning { get; set; }
-        public int SluicePriority { get; set; }
+        private List<Boat> BoatsinSluice { get; set; }
 
+        private int SluiceCapicity = 3;
         private readonly Boat _boat = new Boat();
+        private readonly WaterLevel _waterLevel = new WaterLevel();
+        private SocketServer server;
 
+        public int SluicePriority { get; set; }
         public List<Boat> QueSluice1 { get; set; }
         public List<Boat> QueSluice2 { get; set; }
 
-        private List<Boat> BoatsinSluice { get; set; }
 
         public MainPage()
         {
@@ -32,7 +35,7 @@ namespace B2D2_Sluis_Controller
             IsSluice1Open = true;
             IsSluice2Open = false;
 
-            var server = new SocketServer(9000);
+            server= new SocketServer(9000);
             server.OnDataOntvangen += server.Server_OnDataOntvangen;
         }
 
@@ -50,15 +53,13 @@ namespace B2D2_Sluis_Controller
             }
             if (code == "S1OV")
             {
-                //waterpeil
-                //OpenSluiceGates(1);
+                _waterLevel.Waterlevelrising();
             }
             if (code == "S2OV")
             {
-                //waterpijl
-                //OpenSluiceGates(2);
+                _waterLevel.Waterlevelfalling();
             }
-            if (code == "S1OG")
+            if (code == "S1OG" || code == "S2OG")
             {
                 BoatControl();
             }
@@ -90,12 +91,10 @@ namespace B2D2_Sluis_Controller
             {
                 OpenSluiceValves(2);
             }
-
         }
 
         private void OpenSluiceValves(int idforsluice)
         {
-            var server = new SocketServer(9000);
 
             if (idforsluice == 1)
             {
@@ -103,13 +102,12 @@ namespace B2D2_Sluis_Controller
             }
             if (idforsluice == 2)
             {
-                server.VerstuurBerichtIedereen("S2VO");
+               server.VerstuurBerichtIedereen("S2VO");
             }
         }
 
-        private void OpenSluiceGates(int idfofsluice)
+        public void OpenSluiceGates(int idfofsluice)
         {
-            var server = new SocketServer(9000);
 
             if (idfofsluice == 1)
             {
@@ -119,14 +117,22 @@ namespace B2D2_Sluis_Controller
             {
                 server.VerstuurBerichtIedereen("S2OG");
             }
-
         }
 
         private void BoatControl()
         {
             if (SluicePriority == 1)
             {
-                
+                var totalboatsinque = QueSluice1.Count;
+                if (totalboatsinque >= SluiceCapicity)
+                {
+                    var i = 0;
+                    foreach (var Boat in QueSluice1)
+                    {
+                        BoatsinSluice.Add(QueSluice1[i]);
+                        i++;
+                    }
+                }
             }
         }
 
